@@ -2,6 +2,32 @@
 
 #define MAX 16
 
+int bin_search(int *arr, int n, int key)
+{
+   int low, high, mid;
+
+   low   = 0;
+   high   = n - 1;
+   mid   = low + (high - low) / 2;
+
+   while (low <= high) {
+      if (arr[mid] == key)
+         return mid;
+      if (arr[mid] > key)
+         high = mid - 1;
+      else
+         low = mid + 1;
+      mid = low + (high - low) / 2;
+   }
+
+   return -1;
+}
+
+ void accept_input(int *arr, int n)
+ {
+    int i;
+ }
+
 int main(void)
 {
    int i, n, arr[MAX];
